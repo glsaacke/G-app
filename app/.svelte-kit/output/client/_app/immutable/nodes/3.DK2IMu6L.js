@@ -1,0 +1,1 @@
+import{A as e,h as t,p as n}from"../chunks/BIqnDU1-.js";var r=t(`<h1>Workouts</h1> <button>Generate New Week</button>`,1);function i(t){var i=r();e(2),n(t,i)}export{i as component};
