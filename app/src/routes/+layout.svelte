@@ -1,5 +1,5 @@
 <script lang="ts">
-	import gIcon from '#lib/assets/gIcon.svg';
+	import gIcon from '#lib/assets/gIcon.png';
 
 	let { children } = $props();
 </script>
