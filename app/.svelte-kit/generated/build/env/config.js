@@ -1,5 +1,5 @@
-const variables = {};
-const handle_issues = () => {};
+import { variables } from "../../../../src/env.ts";
+import { validate, handle_issues } from '@sveltejs/kit/internal/env';
 
 const issues = {};
 
@@ -15,6 +15,7 @@ handle_issues(issues);
 
 export function set_env(env) {
 	const issues = {};
-	
+	const DATABASE_URL = validate(variables, env.DATABASE_URL, "DATABASE_URL", issues);
+	dynamic_private_env.DATABASE_URL = DATABASE_URL;
 	handle_issues(issues);
 }

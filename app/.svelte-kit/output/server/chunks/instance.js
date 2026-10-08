@@ -1,6 +1,6 @@
 import { A as ENDPOINT_METHODS, At as add_data_suffix, Bt as assets, C as has_prerendered_path, Ct as make_trackable, D as throw_devalue_error, Dt as find_route, E as serialize_uses, Et as resolve, Ft as strip_resolution_suffix, I as handle_error_and_jsonify, It as base64_encode, J as normalize_error, Lt as stream_text, Mt as has_data_suffix, N as PAGE_METHODS, Nt as has_resolution_suffix, O as with_version_header, Ot as invalid_export, P as REROUTED_URL_HEADER, Pt as strip_data_suffix, Q as fetch_cache_url, Rt as text_encoder, S as get_node_type, St as disable_search, T as redirect_response, Tt as relative_pathname, X as TRAILING_SLASH_PARAM, Y as INVALIDATED_PARAM, _ as handle_action_request, _t as disallow_on_server, a as set_hooks, at as init_transport, b as uneval_action_response, ct as uneval, d as get_remote_action, f as get_remote_id, g as handle_action_json_request, h as action_json_redirect, i as read_implementation, it as has_custom_transporters, j as IN_WEBCONTAINER, jt as add_resolution_suffix, k as BODY_DEPENDENT_METHODS, kt as invalid_export_location, lt as is_form_content_type, m as handle_remote_form_post, n as hooks, p as handle_remote_call, q as get_status, r as manifest, rt as encoders, u as collect_remote_data, ut as negotiate, v as is_action_json_request, vt as noop, w as method_not_allowed, wt as normalize_path, xt as decode_pathname, y as is_action_request, yt as once, zt as app_dir } from "./internal.js";
 import { C as prerender_endpoint_methods, E as prerender_template_nonce, G as set_headers_after_response, K as set_headers_cookie, S as prerender_actions, T as prerender_nonce, X as capture_error, _ as load_fetch_cors, b as load_promise_not_serializable, c as client_address_unsupported, d as cookies_set_after_response, f as csp_report_only_missing_report, g as header_already_set, p as endpoint_invalid_response, u as cookies_serialize_before_route, w as prerender_endpoint_not_prerenderable, x as load_response_header_not_serialized } from "./server-errors.js";
-import { explicit_public_env, rendered_env, set_env } from "../env.js";
+import { i as set_env, n as explicit_public_env, r as rendered_env } from "./config.js";
 import { o as escape_html$1, r as render, t as derived } from "./server.js";
 import { isRedirect, text } from "@sveltejs/kit";
 import { Redirect, SvelteKitError } from "@sveltejs/kit/internal";
@@ -27,7 +27,7 @@ var options = {
 	csrf_trusted_origins: [],
 	service_worker_options: void 0,
 	templates: {
-		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\n<html lang=\"en\">\n	<head>\n		<meta charset=\"utf-8\" />\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n		<meta name=\"text-scale\" content=\"scale\" />\n		" + head + "\n	</head>\n	<body data-sveltekit-preload-data=\"hover\">\n		<div style=\"display: contents\">" + body + "</div>\n	</body>\n</html>\n",
+		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\r\n<html lang=\"en\">\r\n	<head>\r\n		<meta charset=\"utf-8\" />\r\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n		<meta name=\"text-scale\" content=\"scale\" />\r\n		" + head + "\r\n	</head>\r\n	<body data-sveltekit-preload-data=\"hover\">\r\n		<div style=\"display: contents\">" + body + "</div>\r\n	</body>\r\n</html>\r\n",
 		error: error_template_default
 	}
 };
@@ -248,7 +248,7 @@ function server_data_serializer(event, state) {
 	let promise_id = 1;
 	let max_nodes = -1;
 	const iterator = create_async_iterator();
-	const global = "__sveltekit_im0pdm";
+	const global = "__sveltekit_sk5ea8";
 	/** @param {number} index */
 	function get_replacer(index) {
 		/** @param {any} thing */
@@ -1498,7 +1498,7 @@ async function render_response({ branch, fetched, page_config, status, error = n
 			"crossorigin"
 		]);
 	}
-	const global = "__sveltekit_im0pdm";
+	const global = "__sveltekit_sk5ea8";
 	const { data, chunks } = data_serializer.get_data(csp);
 	if (page_config.ssr && page_config.csr) body += `\n\t\t\t${fetched.map((item) => serialize_data(item, resolve_opts.filterSerializedResponseHeaders, !!(state.prerendering || state.prerender_default === true))).join("\n			")}`;
 	if (page_config.csr && client) {
@@ -1522,7 +1522,7 @@ async function render_response({ branch, fetched, page_config, status, error = n
 			}
 		}
 		const blocks = [];
-		const properties = [`base: ${base_expression}`, `version: ${s("1791093460966")}`];
+		const properties = [`base: ${base_expression}`, `version: ${s("1791430471187")}`];
 		if (assets) properties.push(`assets: ${s(assets)}`);
 		if (client.uses_env_dynamic_public) properties.push(`env: ${load_env_eagerly ? "null" : devalue.uneval(rendered_env)}`);
 		if (chunks) {

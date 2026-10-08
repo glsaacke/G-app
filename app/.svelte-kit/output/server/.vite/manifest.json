@@ -3,7 +3,14 @@
     "file": "env.js",
     "name": "env",
     "src": ".svelte-kit/generated/build/env/config.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_config.js"
+    ]
+  },
+  "_config.js": {
+    "file": "chunks/config.js",
+    "name": "config"
   },
   "_internal.js": {
     "file": "chunks/internal.js",
@@ -60,7 +67,7 @@
     "imports": [
       "_internal.js",
       "_server-errors.js",
-      ".svelte-kit/generated/build/env/config.js",
+      "_config.js",
       "_server.js"
     ]
   },
@@ -76,6 +83,9 @@
     "imports": [
       "_server.js"
     ],
+    "css": [
+      "_app/immutable/assets/_layout.BPXihpwO.css"
+    ],
     "assets": [
       "_app/immutable/assets/gIcon.DCYIU7HN.png"
     ]
@@ -87,6 +97,18 @@
     "isEntry": true,
     "imports": [
       "_server.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BabeMunD.css"
+    ]
+  },
+  "src/routes/api/exercises/+server.ts": {
+    "file": "entries/endpoints/api/exercises/_server.ts.js",
+    "name": "entries/endpoints/api/exercises/_server.ts",
+    "src": "src/routes/api/exercises/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_config.js"
     ]
   },
   "src/routes/workouts/+page.svelte": {

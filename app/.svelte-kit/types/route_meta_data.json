@@ -1,4 +1,7 @@
 {
 	"/": [],
+	"/api/exercises": [
+		"src/routes/api/exercises/+server.ts"
+	],
 	"/workouts": []
 }

@@ -1,0 +1,1 @@
+import{h as e,p as t}from"../chunks/BIqnDU1-.js";var n=e(`<div class="home-container svelte-1uha8ag"><div class="home-content svelte-1uha8ag"><h1>Welcome to G-App</h1> <a href="/workouts" class="svelte-1uha8ag">Workouts</a></div></div>`);function r(e){var r=n();t(e,r)}export{r as component};

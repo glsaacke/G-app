@@ -8,8 +8,9 @@ function _layout($$renderer, $$props) {
 	head("12qhfyh", $$renderer, ($$renderer) => {
 		$$renderer.push(`<link rel="icon"${attr("href", gIcon_default)}/> <link rel="manifest" href="/manifest.webmanifest"/> <link rel="apple-touch-icon" href="/icons/gIcon-192.png"/> <meta name="theme-color" content="#373735"/> <meta name="apple-mobile-web-app-capable" content="yes"/>`);
 	});
+	$$renderer.push(`<div class="layout-container svelte-12qhfyh">`);
 	children($$renderer);
-	$$renderer.push(`<!---->`);
+	$$renderer.push(`<!----></div>`);
 }
 //#endregion
 export { _layout as default };
