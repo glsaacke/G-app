@@ -16,7 +16,8 @@
     .content-container {
         background-color: #f0f0f0;
         width: 100%;
-        border: 1px solid #000000;
+        border-right: 3px solid #000000;
+        border-bottom: 3px solid #000000;
         border-radius: 16px;
         display: flex;
         flex-direction: column;
