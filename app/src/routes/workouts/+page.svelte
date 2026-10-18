@@ -1,10 +1,26 @@
-<script>
+<script lang="ts">
+    import { onMount } from 'svelte';
+    
+    onMount(() => {
+        pullWorkoutWeek();
+    });
 
+    function handleGenerateWeek() {
+        console.log('Generate New Week button clicked');
+    }
+
+    async function pullWorkoutWeek() {
+        const results = await fetch('/api/exercises');
+        const exercises = await results.json();
+        console.log(exercises);
+    }
+
+    
 </script>
 
 <div class="content-container">
     <h1>Workouts</h1>
-    <button>Generate New Week</button>
+    <button onclick={handleGenerateWeek}>Generate New Week</button>
 </div>
 
 <style>

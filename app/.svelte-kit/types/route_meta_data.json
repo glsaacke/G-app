@@ -3,5 +3,8 @@
 	"/api/exercises": [
 		"src/routes/api/exercises/+server.ts"
 	],
+	"/api/workouts/week": [
+		"src/routes/api/workouts/week/+server.ts"
+	],
 	"/workouts": []
 }

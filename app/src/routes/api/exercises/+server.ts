@@ -1,11 +1,6 @@
-import type { RequestHandler } from './$types';
-import { getExercises } from '#lib/server/exercises.js';
+import { json } from '@sveltejs/kit';
+import { getExercises } from '#lib/server/workouts.js';
 
-export const GET: RequestHandler = async () => {
-	try {
-		return Response.json(await getExercises());
-	} catch (error) {
-		console.error('Failed to fetch exercises', error);
-		return Response.json({ error: 'Failed to fetch exercises' }, { status: 500 });
-	}
-};
+export async function GET(): Promise<Response> {
+	return json(await getExercises());
+}
