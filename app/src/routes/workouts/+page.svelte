@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { ExerciseDisplay } from '#lib/components/ExerciseDisplay.svelte';
+
     import type { Exercise } from '#lib/types/exercise.js';
 
     let allExercises = $state<Exercise[]>([]);
