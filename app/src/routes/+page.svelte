@@ -1,8 +1,4 @@
-<script>
-    import '../app.css'
-</script>
-
-<div class="content-container">
+<div class="card">
     <h1>Welcome to G-App</h1>
     <div class="link-container">
         <a href="/workouts">Workouts</a>
@@ -12,19 +8,6 @@
 
 
 <style>
-
-    .content-container {
-        background-color: #f0f0f0;
-        width: 100%;
-        border-right: 3px solid #000000;
-        border-bottom: 3px solid #000000;
-        border-radius: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        gap: 40px
-    }
 
     .link-container {
         display: flex;

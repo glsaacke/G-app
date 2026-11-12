@@ -1,6 +1,7 @@
 <script lang="ts">
 	import gIcon from '#lib/assets/gIcon.png';
 	import Navbar from '#lib/components/Navbar.svelte';
+	import '../app.css';
 
 	let { children } = $props();
 </script>
@@ -37,6 +38,7 @@
         flex-direction: column;
         align-items: center;
 		border: 2px dashed magenta;
+		gap: 20px;
     }
 
 	@media (min-width: 900px) {

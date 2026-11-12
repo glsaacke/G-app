@@ -1,39 +1,60 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { ExerciseDisplay } from '#lib/components/ExerciseDisplay.svelte';
+    import type { Exercise } from '#lib/types/exercise.js';
+
+    let allExercises = $state<Exercise[]>([]);
     
-    onMount(() => {
-        pullWorkoutWeek();
+    onMount(async () => {
+        allExercises = await getAllExercises();
     });
 
     function handleGenerateWeek() {
         console.log('Generate New Week button clicked');
     }
 
-    async function pullWorkoutWeek() {
-        const results = await fetch('/api/exercises');
-        const exercises = await results.json();
-        console.log(exercises);
+
+    async function getAllExercises(): Promise<Exercise[]> {
+        const results = await fetch('/api/exercises', { method: 'GET' });
+        let exercises: Exercise[] = await results.json();
+        return exercises;
     }
 
-    
+    $inspect(allExercises);
 </script>
 
-<div class="content-container">
+<div class="content-container card">
     <h1>Workouts</h1>
     <button onclick={handleGenerateWeek}>Generate New Week</button>
+    <button>Exercises</button>
+</div>
+
+<div class="card">
+    <h2>Exercises</h2>
+    {#if allExercises.length > 0}
+            {#each allExercises as exercise}
+            //TODO: Replace button with new component
+                <button class="exercise-button">{exercise.name}</button>
+            {/each}
+    {:else}
+        <p>Loading...</p>
+    {/if}
+
+
 </div>
 
 <style>
-     .content-container {
-        background-color: #f0f0f0;
-        width: 100%;
-        border-right: 3px solid #000000;
-        border-bottom: 3px solid #000000;
-        border-radius: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        gap: 40px
+
+    .exercise-button {
+        border: none;
+
     }
+
+    .exercise-button:hover {
+        cursor: pointer;
+        background-color: #e0e0e0;
+    }
+
 </style>
+
+
